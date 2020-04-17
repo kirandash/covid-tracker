@@ -1,0 +1,36 @@
+export const sampleCountries = [
+    {
+        "info":{
+		    "ourid":167,
+		    "title":"USA",
+		    "code":"US",
+		    "source":"https://thevirustracker.com/usa-coronavirus-information-us"
+         },
+         "total_cases":680541,
+         "total_recovered":58066,
+         "total_unresolved":0,
+         "total_deaths":34723,
+         "total_new_cases_today":2971,
+         "total_new_deaths_today":106,
+         "total_active_cases":587752,
+         "total_serious_cases":13369,
+         "total_danger_rank":1
+    },
+    {
+        "info":{
+		    "ourid":177,
+		    "title":"Singapore",
+		    "code":"SG",
+		    "source":"https://thevirustracker.com/singapore-coronavirus-information-sg"
+         },
+         "total_cases":5050,
+         "total_recovered":683,
+         "total_unresolved":0,
+         "total_deaths":10,
+         "total_new_cases_today":623,
+         "total_new_deaths_today":0,
+         "total_active_cases":4357,
+         "total_serious_cases":29,
+         "total_danger_rank":41
+    }
+]
