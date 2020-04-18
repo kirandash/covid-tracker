@@ -1,10 +1,47 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './CountryDetail.css';
+// import './CountryDetail.css';
 
-const CountryDetail = ({ country }) => {
+const CountryWrapper = styled.div`
+    background: ${props => props.isPinned ? '#350000' : '#212121'};
+    color: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 0px 2px white;
+`;
+
+const ButtonsWrapper = styled.div`
+    margin-top: 1rem;
+`;
+
+const Button = styled.button`
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+`;
+
+const PinButton = styled(Button)`
+    display: inline-block;
+    background-color: #73b2ff;
+`;
+
+const RemoveButton = styled(Button)`
+    display: inline-block;
+    background-color: #e60000;
+    margin-left: 8px;
+    @media screen and (max-width: 767px) {
+        background-color: white;
+    }
+`;
+
+const CountryDetail = ({ country, onRemovePressed, onPin }) => {
     return (
-        <div className="country-wrapper">
+        <CountryWrapper isPinned={country.isPinned}>
             <h3>{country.info.title}</h3>
             <table>
                 <thead>
@@ -22,11 +59,13 @@ const CountryDetail = ({ country }) => {
                     </tr>
                 </tbody>
             </table>
-            <div className="buttons-wrapper">
-                <button className="pin-button">Pin Country</button>
-                <button className="remove-button">Remove</button>
-            </div>
-        </div>
+            <ButtonsWrapper>
+                {!country.isPinned && <PinButton 
+                    onClick={() => onPin(country.info.code)}>Pin Country</PinButton>}
+                <RemoveButton 
+                    onClick={() => onRemovePressed(country.info.code)}>Remove</RemoveButton>
+            </ButtonsWrapper>
+        </CountryWrapper>
     );
 };
 
