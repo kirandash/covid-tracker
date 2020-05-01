@@ -1,4 +1,4 @@
-# COVID Tracker
+# COVID-19 Tracker - A Scalable React Application - Using React, Redux, Thunks, Selectors & Styled Components
 ## URLs
 ### Demo
 http://bgwebagency.in/projects/ui/covid-tracker/
